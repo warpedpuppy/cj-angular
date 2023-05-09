@@ -36,6 +36,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
+    AppComponent,
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
