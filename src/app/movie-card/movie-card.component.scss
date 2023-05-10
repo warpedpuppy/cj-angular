@@ -8,10 +8,11 @@
 }
 
 .movie-card {
-  margin-top: .35em;
+  margin-top: 10px;
   width: 30vw;
   justify-self: center;
   justify-content: center;
+  padding: 10px;
 }
 
 .mat-mdc-card-header {
@@ -19,7 +20,7 @@
 }
 
 .movie-card > img {
-  // height: 70%;
+  height: 70%;
 }
 
 .mdc-card__actions {

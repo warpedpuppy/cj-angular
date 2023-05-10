@@ -53,7 +53,7 @@ export class UserProfileComponent implements OnInit {
         localStorage.clear();
         this.router.navigate(['welcome']);
         this.snackBar.open(
-          'Credentials updated! Please login using your new credentials',
+          'Credentials updated! Please login using your new credentials.',
           'OK',
           {
             duration: 2000,
@@ -74,10 +74,10 @@ export class UserProfileComponent implements OnInit {
 
   // Delete user data for the user that is logged in
   deleteAccount(): void {
-    if (confirm('All your data will be lost - this cannnot be undone!')) {
+    if (confirm('All your data will be lost - this cannot be undone!')) {
       this.router.navigate(['welcome']).then(() => {
         this.snackBar.open(
-          'You have successfully deleted your account - we are sorry to see you go!',
+          'You have successfully deleted your account!',
           'OK',
           {
             duration: 2000,

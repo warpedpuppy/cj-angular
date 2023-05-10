@@ -63,7 +63,13 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    DialogModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
