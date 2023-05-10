@@ -35,14 +35,17 @@ export class MovieCardComponent {
   // Fetch user info and set favorites
   getFavorites(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
-      this.favorites = resp.FavoriteMovies;
+      this.favorites = resp.user.FavoriteMovies;
       return this.favorites;
     });
   }
 
    // check if a movie is a user's favorite
   isFavorite(id: string): boolean {
-    return this.favorites.includes(id);
+    //["id_of_movie"].include("id_of_movie")
+    //[{_id:"id_of_movie", ...}].include("id_of_movie")
+    //[{_id:"id_of_movie", ...}].find(favMovie => favMovie._id === "id_of_movie") !!{} || !!undefined
+    return !!(this.favorites.find(favMovie => favMovie._id === id));
   }
 
   // add a movie to a user's favorites

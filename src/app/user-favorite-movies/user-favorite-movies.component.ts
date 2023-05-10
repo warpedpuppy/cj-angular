@@ -27,13 +27,13 @@ export class UserFavoriteMoviesComponent {
   getFavoriteMovies(): void {
     this.favorites, this.favoriteMovies = [];
     this.fetchApiData.getUser().subscribe((resp: any) => {
-      this.favorites = resp.FavoriteMovies;
-      this.favorites.map((favorite: any) => {
-        console.log(favorite);
-        this.fetchApiData.getMovieById(favorite).subscribe((resp: any) => {
-          this.favoriteMovies.push(resp);
-        });
-      });
+      this.favoriteMovies = resp.user.FavoriteMovies;
+      // this.favorites.map((favorite: any) => {
+      //   console.log(favorite);
+      //   // this.fetchApiData.getMovieById(favorite).subscribe((resp: any) => {
+      //   //   this.favoriteMovies.push(resp);
+      //   // });
+      // });
     });
   }
 

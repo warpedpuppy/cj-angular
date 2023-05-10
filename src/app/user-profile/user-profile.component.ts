@@ -4,6 +4,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { formatDate } from '@angular/common';
+import { response } from 'express';
 
 @Component({
   selector: 'app-user-profile',
@@ -35,7 +36,7 @@ export class UserProfileComponent implements OnInit {
   // Fetch user data via API
   getUserInfo(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
-      this.user = resp;
+      this.user = resp.user;
       this.updatedUser.Username = this.user.Username;
       this.updatedUser.Email = this.user.Email;
       // this.user.Birthday comes in as ISOString format, like so: "2011-10-05T14:48:00.000Z"
